@@ -20,7 +20,7 @@ export const AddPass = ({addPass}) => {
             <form onSubmit={submit}>
                 <div className='mb-3'>
                     <label htmlfor="website" className='form-label'>Website Name</label>
-                    <input type="text" action="https://example.com" method="post" value = {website} onChange={(e)=>setWebsite(e.target.value)} className='form-control' id="website"/>
+                    <input type="text" value = {website} onChange={(e)=>setWebsite(e.target.value)} className='form-control' id="website"/>
                 </div>
                 <div className="mb-3">
                     <label htmlfor="title" className="form-label">Username</label>
