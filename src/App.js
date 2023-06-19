@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-    <Header title="Password Manager" searchBar="true" />
+    <Header title="Password Manager"/>
     <AddPass addPass={addPass}/>
    
     
