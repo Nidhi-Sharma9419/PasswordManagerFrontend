@@ -71,11 +71,12 @@ export const AddPass = () => {
                 </div>
 <div>
             <button
-                className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-4`}
+                className="btn btn-primary btn-sm"
                 onClick={() => encryptMessage(title)}
             >
                 Encrypt Message
             </button>
+            <div>
             <label htmlFor="encryptedMessage" className={`text-2xl`}>
                 Encrypted Message
             </label>
@@ -83,20 +84,22 @@ export const AddPass = () => {
                 type="text"
                 name="passKey"
                 id="key"
-                className={`p-2 m-4 text-black border-2 border-black rounded`}
+                className="form-label"
                 value={encryptedMessage}
                 readOnly={true}
             />
+            </div>
 </div>            
     
             {/* sign message using metamask */}
             <div>
             <button
-                className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-4`}
+                className="btn btn-primary btn-sm"
                 onClick={() => signMessage(desc)}
             >
                 Sign Message
             </button>
+            <div>
             <label htmlFor="encryptedMessage" className={`text-2xl`}>
                 Signed Message
             </label>
@@ -104,10 +107,11 @@ export const AddPass = () => {
                 type="text"
                 name="passKey"
                 id="key"
-                className={`p-2 m-4 text-black border-2 border-black rounded`}
+                className="form-label"
                 value={signature}
                 readOnly={true}
             />
+            </div>
             </div>
                 
                 <button  type="submit" className="btn btn-primary btn-sm" >Add</button>
