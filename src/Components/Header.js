@@ -1,24 +1,21 @@
-import React, { useState } from 'react'
-
+import React, { useContext, useState } from "react";
+import { walletContext } from "../utils/context";
 
 export default function Header(props) {
-  const [connected, setConnected] = useState(false)
-  const [account, setAccount] = useState("");
+  const [connected, setConnected] = useState(false);
+  const { address, setAddress } = useContext(walletContext);
 
   const connect = async () => {
     if (window.ethereum) {
-      let account_arr =  await window.ethereum.request({
+      let account_arr = await window.ethereum.request({
         method: "eth_requestAccounts",
       });
       setConnected(true);
-      setAccount(account_arr[0])
+      setAddress(account_arr[0]);
     } else {
       alert("No wallet found");
     }
   };
-
-
-  
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -51,16 +48,11 @@ export default function Header(props) {
               </a>
             </li>
           </ul>
-          <button
-            onClick={() => connect()}
-            className={`text-black`}
-          >
-            {!connected ? "Connect Wallet" : account}
+          <button onClick={() => connect()} className={`text-black`}>
+            {!connected ? "Connect Wallet" : address}
           </button>
         </div>
       </div>
     </nav>
   );
 }
-
-
