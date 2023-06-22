@@ -3,6 +3,7 @@ import CryptoJS from "crypto-js";
 import React, { useContext, useState } from "react";
 import Header from "./Header";
 import { walletContext } from "../utils/context";
+import './common.css';
 
 export const AddPass = () => {
   const [website, setWebsite] = useState("");
@@ -106,39 +107,45 @@ export const AddPass = () => {
             Encrypt Message
           </button>
           <div>
-            <label htmlFor="encryptedMessage" className={`text-2xl`}>
+            <div>
+            <label htmlFor="encryptedMessage" className={`text-2xl absolute-center`}>
               Encrypted Website
             </label>
             <input
               type="text"
               name="passKey"
               id="key"
-              className="form-label"
+              className="form-control absolute-center"
               value={enWebsite}
               readOnly={true}
             />
-            <label htmlFor="encryptedMessage" className={`text-2xl`}>
+            </div>
+            <div>
+            <label htmlFor="encryptedMessage" className={`text-2xl absolute-center`}>
               Encrypted username
             </label>
             <input
               type="text"
               name="passKey"
               id="key"
-              className="form-label"
+              className="form-control absolute-center"
               value={enUsername}
               readOnly={true}
             />
-            <label htmlFor="encryptedMessage" className={`text-2xl`}>
+            </div>
+            <div>
+            <label htmlFor="encryptedMessage" className={`text-2xl absolute-center`}>
               Encrypted Password
             </label>
             <input
               type="text"
               name="passKey"
               id="key"
-              className="form-label"
+              className="form-control absolute-center"
               value={enPass}
               readOnly={true}
             />
+            </div>
           </div>
         </div>
 
